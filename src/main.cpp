@@ -121,12 +121,15 @@ std::vector<String> processData(String json) {
       
       char dirChar = getDirectionChar(t["direction"]);
       
+      const char* origin = t.containsKey("origin") && !t["origin"].isNull() ? (const char*)t["origin"] : "";
+      const char* dest = t.containsKey("destination") && !t["destination"].isNull() ? (const char*)t["destination"] : "";
+      
       char buffer[17];
       snprintf(buffer, sizeof(buffer), "%c %s %.4s-%.4s", 
                dirChar, 
                headcode, 
-               (const char*)t["origin"], 
-               (const char*)t["destination"]);
+               origin, 
+               dest);
       
       lines.push_back(String(buffer));
       row++;
