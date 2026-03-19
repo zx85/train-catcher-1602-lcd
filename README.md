@@ -23,7 +23,7 @@ A dedicated hardware display for the [train-catcher](https://github.com/zx85/tra
 ## Dependencies
 
 ### External API
-This project requires a running instance of train-catcher to serve the JSON API containing train data.
+This project requires a running instance of [train-catcher](https://github.com/zx85/train-catcher) to serve the JSON API containing approaching train data.
 
 ### Firmware Libraries
 The project uses PlatformIO for dependency management. Key libraries include:
@@ -40,7 +40,7 @@ The project uses PlatformIO for dependency management. Key libraries include:
 ### 2. Configuration
 You must create a `src/config.h` file to store your sensitive credentials and configuration. This file is referenced by `main.cpp` but is not included in the repository.
 
-Create `src/config.h` with the following content:
+Rename `include/config.h-example` to `include/config.h` and made the appropriate modifications, eg:
 
 ```cpp
 #ifndef CONFIG_H
@@ -51,7 +51,7 @@ const char* ssid = "YOUR_WIFI_SSID";
 const char* password = "YOUR_WIFI_PASSWORD";
 
 // API Configuration
-const char* jsonUrl = "http://<YOUR_SERVER_IP>:<PORT>/path/to/trains.json";
+const char* jsonUrl = "http://<YOUR_SERVER_IP>:<PORT>/trains";
 const unsigned long requestInterval = 30000; // Refresh rate in milliseconds
 
 #endif
