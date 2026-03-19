@@ -1,0 +1,13 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+const char* ssid = "";
+const char* password = "";
+
+// WiFi and HTTP Constants
+// URL to the train-catcher API which can be found at
+// https://github.com/zx85/train-catcher
+const char* jsonUrl = "http://192.168.1.101:3300/trains";
+const unsigned long requestInterval = 10000; // 10 seconds
+
+#endif

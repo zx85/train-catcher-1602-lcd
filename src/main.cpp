@@ -6,15 +6,11 @@
 #include <WiFiClient.h>
 #include <ArduinoJson.h>
 #include <vector>
-#include "secrets.h"
+#include "config.h"
 
 // Constants
 const int ledPin = LED_BUILTIN;  // onboard LED (usually D4)
 const unsigned long blinkInterval = 5000; // milliseconds
-
-// WiFi and HTTP Constants
-const char* jsonUrl = "http://192.168.75.4:3300/trains";
-const unsigned long requestInterval = 10000; // 10 seconds
 
 // I2C pins on Wemos D1 Mini Pro: SDA = D2 (GPIO4), SCL = D1 (GPIO5)
 // Address may vary; common values are 0x27 or 0x3F. Adjust if needed.
